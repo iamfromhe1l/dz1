@@ -52,6 +52,40 @@ void z_2()
        << "Max: " << max << endl;
 }
 
+void z_3()
+{
+  const int n = 15;
+  int min_e = INT16_MAX, min_idx;
+  int A[n];
+  for (int i = 0; i < n; i++)
+  {
+    int num = 10 + rand() % 91;
+    A[i] = num;
+    if (num < min_e)
+    {
+      min_e = num;
+      min_idx = i;
+    }
+  }
+  cout << "In: ";
+  print(A, n);
+  swap(A[0], A[min_idx]);
+  cout << "Out: ";
+  print(A, n);
+}
+
+void z_4()
+{
+  const int n = 15;
+  int A[n];
+  cout << "In Array: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> A[i];
+  }
+  int min_e = INT16_MAX;
+}
+
 void z_10()
 {
   const int n = 5;
@@ -155,7 +189,131 @@ void z_13()
   cout << endl;
 }
 
+void z_14()
+{
+  const int n = 5;
+  int A[n];
+  int B[n];
+  map<int, int[2]> mp;
+  cout << "A: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> A[i];
+  }
+  cout << "B: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> B[i];
+    mp[B[i]][1] = 1;
+    mp[B[i]][0] += 1;
+  }
+
+  cout << endl;
+  cout << "A: ";
+  print(A, n);
+  cout << "B: ";
+  print(B, n);
+  for (int i = 0; i < n; i++)
+  {
+    if (mp[A[i]])
+    {
+      cout << "Num: " << A[i] << ", Count: " << mp[A[i]][0] << endl;
+    }
+  }
+}
+
+void z_15()
+{
+  const int n = 6;
+  int A[n];
+  cout << "In Array: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> A[i];
+  }
+  cout << "Out: ";
+  for (int i = 0; i < n; i++)
+  {
+    if (A[i] >= 0)
+    {
+      cout << A[i] << " ";
+    }
+  }
+
+  for (int i = 0; i < n; i++)
+  {
+    if (A[i] < 0)
+    {
+      cout << A[i] << " ";
+    }
+  }
+  cout << endl;
+}
+
+void z_16()
+{
+  const int n = 5;
+  int A[n];
+  int B[n];
+  map<int, int[2]> mp;
+  cout << "A: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> A[i];
+  }
+  cout << "B: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> B[i];
+  }
+  for (int i = 0; i < n; i++)
+  {
+    if (A[i] <= 0)
+    {
+      B[i] *= 10;
+    }
+    else
+    {
+      B[i] = 0;
+    }
+  }
+  cout << "Out: ";
+  for (int i = 0; i < n; i++)
+  {
+    if (B[i] >= 0)
+    {
+      cout << B[i] << " ";
+    }
+  }
+}
+
+void z_17()
+{
+  const int n = 5;
+  int m = n;
+  int A[n];
+  cout << "Array: " << endl;
+  int summ = 0;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> A[i];
+    if (A[i] >= 0)
+    {
+      summ += A[i];
+      m -= 1;
+    }
+  }
+  if (m == 0)
+  {
+    cout << "0" << endl;
+  }
+  else
+  {
+    cout << "Enum num: " << summ / m << endl;
+  }
+}
+
 void main()
 {
-  z_13();
+  z_3();
 }
