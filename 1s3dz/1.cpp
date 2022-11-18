@@ -35,6 +35,7 @@ int main()
       m++;
     }
   }
+
   cout << "Output: ";
   for (int i = 0; i < n + m; i++)
   {
